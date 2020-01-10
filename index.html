@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <link href="https://fonts.googleapis.com/css?family=Niramit|Odibee+Sans|Righteous&display=swap" rel="stylesheet">
@@ -11,27 +11,30 @@
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Odibee+Sans|Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" />
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
     
     <title>Heat Wave Crime Data</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
+    
 </head>
-<body style="background-image: url(assets/connectwork.png)">
+<body>
     <h1>Heat Wave Crime Data</h1>
-    <div class="container">
-        
-        <div class="row">
-           <div class="sidebar col-md-4">
+    
 
-           </div>
-           <div class="col md-8">
-
-           </div>
-        </div>
-    </div>
-
-
-    <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
-    <script src="moment.js"></script>
-    <script src="script.js"></script>
+    <div id="map"></div>
+    
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoibGF3bmExMiIsImEiOiJjazU3ZXdrcjYwMzVuM2VtN25wanM5eGh4In0.tVXQj-3Lrl58e2SmJgyjmw';
+    var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+        center: [-74.5, 40], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+});
+</script>
+    
+    
+    <script src="assets/js/moment.js"></script>
+    <script src="assets/js/jquery.js"></script>
 </body>
 </html>

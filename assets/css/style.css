@@ -1,9 +1,22 @@
-h1 {    text-align: center;
-        background-color: #00000079;
-        color: rgb(255, 208, 0);
-        padding: 15px;
-        font-family: 'Special Elite', cursive;
+body {
+    background-image: url(/assets/connectwork.png);
 }
-.sidebar {  background-color: #00000079;
+#map { 
+    position: absolute;
+    top: 0;
+    bottom:0;
+    width:75%;
+    margin:auto;
+}
+h1 {    
+    text-align: center;
+    background-color: #00000079;
+    color: rgb(255, 208, 0);
+    padding: 15px;
+    font-family: 'Special Elite', cursive;
+}
+.sidebar {  
+    background-color: #00000079;
 
 }
+
