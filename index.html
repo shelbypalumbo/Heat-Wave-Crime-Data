@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
     <link href="https://fonts.googleapis.com/css?family=Niramit|Odibee+Sans|Righteous&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <!--Google API-->
     <link href="https://fonts.googleapis.com/css?family=Odibee+Sans|Special+Elite&display=swap" rel="stylesheet">
+    <!-- Compressed Foundation CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css"
+        integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg=="
+        crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css" />
     
     <title>Heat Wave Crime Data</title>
@@ -19,9 +24,29 @@
 </head>
 <body>
     <h1>Heat Wave Crime Data</h1>
-    
+    <div class="grid-container">
 
-    <div id="map"></div>
+        <div class="grid-x">
+            <div class="card cell medium-6 large-4">
+                <div class="card-divider">
+                    <h3>Search an Area:</h3>
+                </div>
+                <div class="card-section">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input id="searchInput" class="form-control mr-sm-2" type="text" placeholder="Search"
+                            aria-label="Search">
+                        <button type="button" class="warning button"><i class="fas fa-search"></i></button></button>
+                    </form>
+                </div>
+            </div>
+            <div class="cell medium-6 large-8">
+                <div id="map"></div>
+            </div>
+        </div>
+
+    </div> 
+
+    
     
 <script>
 	mapboxgl.accessToken = 'pk.eyJ1IjoibGF3bmExMiIsImEiOiJjazU3ZXdrcjYwMzVuM2VtN25wanM5eGh4In0.tVXQj-3Lrl58e2SmJgyjmw';
@@ -36,5 +61,21 @@
     
     <script src="assets/js/moment.js"></script>
     <script src="assets/js/jquery.js"></script>
+
+
+    
+    
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://unpkg.com/moment"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js"
+        integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA=="
+        crossorigin="anonymous"></script>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+
 </body>
+
 </html>
