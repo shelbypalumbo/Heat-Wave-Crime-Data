@@ -1,18 +1,23 @@
-h1 {    text-align: center;
-        background-color: #00000079;
-        color: rgb(255, 208, 0);
-        padding: 20px;
-        font-family: 'Special Elite', cursive;
+header, h1 {    text-align: center;
+                background-color: #00000079;
+                color: rgb(255, 208, 0);
+                padding: 20px;
+                font-family: 'Special Elite', cursive;
 }
 
-.card-divider {  background-color: orange;
+.card-divider {  background-color: orange;              
 }
 
 h3 {    color: #222222; 
-        font-family: 'Special Elite', cursive;
-        padding: 10px; 
+        font-family: 'Special Elite', cursive; 
 }
 
-.card { border-color: #000000;
-    width: 300px;
+.mainMap {  background-color: #111111;
+            border-radius: 20px;
+}
+footer { color:#ffffff;
+}
+
+.button {   border-radius: 35px;
+            background-color: #222222;
 }

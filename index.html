@@ -20,28 +20,28 @@
 </head>
 
 <body style="background-image: url(assets/connectwork.png)">
-    <h1>Heat Wave Crime Data</h1>
+    <header>
+        <h1>Heat Wave Crime Data</h1>
+            <div class="card-divider">
+                <h3>Search an Area: &nbsp;</h3>
+                <form class="form-inline my-2 my-lg-0">
+                        <input id="searchInput" class="form-control mr-sm-2" type="text" placeholder="Search"
+                            aria-label="Search">
+                        <button type="button" class=" button"><i class="fas fa-search"></i></button></button>
+                </form>
+            </div>
+          
+    </header>
     <div class="grid-container">
 
         <div class="grid-x">
-            <div class="card cell medium-6 large-4">
-                <div class="card-divider">
-                    <h3>Search an Area:</h3>
-                </div>
-                <div class="card-section">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input id="searchInput" class="form-control mr-sm-2" type="text" placeholder="Search"
-                            aria-label="Search">
-                        <button type="button" class="warning button"><i class="fas fa-search"></i></button></button>
-                    </form>
-                </div>
-            </div>
-            <div class="cell medium-6 large-8">
-
-            </div>
+            
         </div>
-
+        
     </div>
+
+ 
+
     <script src="assets/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -54,5 +54,4 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
 
 </body>
-
 </html>
