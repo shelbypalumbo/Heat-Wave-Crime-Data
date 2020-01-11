@@ -1,3 +1,25 @@
+body {
+    background-image: url("connectwork.png");
+}
+
+
+/*styling for mapbox map start---------------------------*/
+
+
+
+#map {
+    position: absolute;
+    top:50%;
+    bottom:0;
+    width:75%;
+    margin: auto;
+    margin-bottom:40px;
+
+}
+
+
+
+/*styling for mapbox map end---------------------------*/
 header, h1 {    text-align: center;
                 background-color: #00000079;
                 color: rgb(255, 208, 0);
@@ -12,9 +34,8 @@ h3 {    color: #222222;
         font-family: 'Special Elite', cursive; 
 }
 
-.mainMap {  background-color: #111111;
-            border-radius: 20px;
-}
+
+
 footer { color:#ffffff;
 }
 
