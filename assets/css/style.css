@@ -1,32 +1,8 @@
-<<<<<<< HEAD
 header, h1 {    text-align: center;
                 background-color: #00000079;
                 color: rgb(255, 208, 0);
                 padding: 20px;
                 font-family: 'Special Elite', cursive;
-=======
-body {
-    background-image: url(/assets/connectwork.png);
-}
-#map { 
-    position: absolute;
-    top: 0;
-    bottom:0;
-    width:75%;
-    margin:auto;
-}
-
-.sidebar {  
-    background-color: #00000079;
-
-}
-
-h1 {    text-align: center;
-        background-color: #00000079;
-        color: rgb(255, 208, 0);
-        padding: 20px;
-        font-family: 'Special Elite', cursive;
->>>>>>> aa89306e2236cacc2af8384dc034eca750e9bbb1
 }
 
 .card-divider {  background-color: orange;              
@@ -36,7 +12,6 @@ h3 {    color: #222222;
         font-family: 'Special Elite', cursive; 
 }
 
-<<<<<<< HEAD
 .mainMap {  background-color: #111111;
             border-radius: 20px;
 }
@@ -46,8 +21,3 @@ footer { color:#ffffff;
 .button {   border-radius: 35px;
             background-color: #222222;
 }
-=======
-.card { border-color: #000000;
-    width: 300px;
-}
->>>>>>> aa89306e2236cacc2af8384dc034eca750e9bbb1
