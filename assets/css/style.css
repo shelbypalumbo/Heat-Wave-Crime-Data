@@ -1,4 +1,5 @@
 body {  background-image: url("connectwork.png");
+    position:relative;
 }
 
 /*styling for mapbox map start---------------------------*/
@@ -8,8 +9,8 @@ body {  background-image: url("connectwork.png");
     width:90%;
     margin: auto;
     margin-top: 15px;
-    margin-bottom: 20px;
     height:500px;
+    margin-bottom:40px;
 }
 
 /*styling for mapbox map end---------------------------*/
@@ -46,4 +47,8 @@ h1 {    font-family: 'Special Elite', cursive;
             position: absolute;
             bottom: 0;
         
+}
+
+.container-fluid {
+    margin-bottom:40px;
 }
