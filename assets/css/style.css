@@ -53,3 +53,22 @@ h1 {    font-family: 'Special Elite', cursive;
 .container-fluid {
     margin-bottom:40px;
 }
+
+.text-white {
+    color:white;
+}
+.searches {
+    width:15%;
+}
+.data {
+    width:30%;
+}
+.map-column {
+    width:55%;
+}
+tbody {
+    color:black;
+}
+li {
+    background-color:white;
+}

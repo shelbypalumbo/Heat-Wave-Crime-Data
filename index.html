@@ -39,20 +39,57 @@
     <header>
         <h1>Heat Wave Crime Data</h1>
     </header>
-    <!-- testing button start -->
+    
     <div class="grid-x">
-        <input type="text" id="city-input" placeholder="Search for a city...">
-        <button type="button" class="primary button">Search</button>
+        <!-- <input type="text" id="city-input" placeholder="Search for a city..."> -->
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            </div>
+        </div>
+        
     </div>
-    <br>
-    <!-- testing button end -->
+    
+    
 
     <div class="grid-container fluid">
         
 
         <div class="grid-x">
-            <div id="map"></div>
-            <div id="geocoder" class="geocoder"></div>
+            <div class="grid-y text-white searches"><h3>Previous Searches</h3></div>
+            <div class="grid-y text-white data"><h3>Data Here</h3>
+                <hr>
+                <p>Total Crimes in this city:</p>
+                <p>Crimes Per Capita:</p>
+                <p>National Per Capita:</p>
+                <p>Risk level:</p>
+
+                <!-- <table>
+                    <thead>
+                      <tr>
+                        <th width="200">Table Header</th>
+                        <th>Table Header</th>
+                        <th width="150">Table Header</th>
+                        <th width="150">Table Header</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Content Goes Here</td>
+                        <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+                        <td>Content Goes Here</td>
+                        <td>Content Goes Here</td>
+                      </tr>
+                    </tbody>
+                  </table> -->
+            </div>
+            <div class="grid-y map-column">
+                <div id="map"></div>
+                <div id="geocoder" class="geocoder"></div>
+            </div>
+            
         </div>
     </div>
     <br>
@@ -64,13 +101,18 @@
             <p>&#169; Heat Wave Co.</p>
     </div>
 
-
+    <!-- Bootstrap docs start -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Bootstrap docs end -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/moment"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js"
         integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA=="
         crossorigin="anonymous"></script>
+    <!-- <script src="assets/js/capitals.js"></script> -->
     <script src="assets/js/script.js"></script>
 
 </body>
