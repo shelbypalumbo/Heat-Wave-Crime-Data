@@ -41,7 +41,7 @@
     </header>
     
     <div class="grid-x">
-        <!-- <input type="text" id="city-input" placeholder="Search for a city..."> -->
+        
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Dropdown button
@@ -58,32 +58,14 @@
         
 
         <div class="grid-x">
-            <div class="grid-y text-white searches"><h3>Previous Searches</h3></div>
-            <div class="grid-y text-white data"><h3>Data Here</h3>
-                <hr>
-                <p>Total Crimes in this city:</p>
-                <p>Crimes Per Capita:</p>
-                <p>National Per Capita:</p>
+            
+            <div class="grid-y text-white data"><h4>Data Here</h4>
+                <p id="homicides">Homicides: </p>
+                <p id="hPerCapita">Homicides per Capita: </p>
+                <p id="national">National Per Capita: </p>
                 <p>Risk level:</p>
 
-                <!-- <table>
-                    <thead>
-                      <tr>
-                        <th width="200">Table Header</th>
-                        <th>Table Header</th>
-                        <th width="150">Table Header</th>
-                        <th width="150">Table Header</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Content Goes Here</td>
-                        <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-                        <td>Content Goes Here</td>
-                        <td>Content Goes Here</td>
-                      </tr>
-                    </tbody>
-                  </table> -->
+                
             </div>
             <div class="grid-y map-column">
                 <div id="map"></div>
@@ -112,7 +94,7 @@
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js"
         integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA=="
         crossorigin="anonymous"></script>
-    <!-- <script src="assets/js/capitals.js"></script> -->
+    <script src="assets/js/capitals.js"></script>
     <script src="assets/js/script.js"></script>
 
 </body>

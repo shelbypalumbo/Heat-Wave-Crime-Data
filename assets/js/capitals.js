@@ -1,252 +1,403 @@
-var stateCapitals = {
-    "Alabama": {
+var stateCapitals = [
+    {
       capital: "Montgomery",
+      state: "Alabama",
+      abbreviation: "AL",
       lat: 32.361538,
-      long: -86.279118
+      long: -86.279118,
+      population: 737438 
     },
-    "Alaska": {
+    {
       capital: "Juneau",
+      state: "Alaska",
+      abbreviation: "AK",
       lat: 58.301935,
-      long: -134.419740
+      long: -134.419740,
+      population: 4887871
     },
-    "Arizona": {
+    {
       capital: "Phoenix",
+      state: "Arizona",
+      abbreviation: "AZ",
       lat: 33.448457,
-      long: -112.073844
+      long: -112.073844,
+      population: 3013825 
     },
-    "Arkansas": {
+    {
       capital: "Little Rock",
+      state: "Arkansas",
+      abbreviation: "AR",
       lat: 34.736009,
-      long: -92.331122
+      long: -92.331122,
+      population: 7171646
     },
-    "California": {
+    {
       capital: "Sacramento",
+      state: "California",
+      abbreviation: "CA",
       lat: 38.555605,
-      "long": -121.468926
+      long: -121.468926,
+      population: 39557045 
     },
-    "Colorado": {
+    {
       capital: "Denver",
+      state: "Colorado",
+      abbreviation: "CO",
       lat: 39.7391667,
-      long: -104.984167
+      long: -104.984167,
+      population: 569564
     },
-    "Connecticut": {
+    {
       capital: "Hartford",
+      state: "Connecticut",
+      abbreviation: "CT",
       lat: 41.767,
-      long: -72.677
+      long: -72.677,
+      population: 3572665
     },
-    "Delaware": {
+    {
       capital: "Dover",
+      state: "Delaware",
+      abbreviation: "DE",
       lat: 39.161921,
-      long: -75.526755
+      long: -75.526755,
+      population: 967171
     },
-    "Florida": {
-      capital: "Tallahassee",
-      lat: 30.4518,
-      long: -84.27277
-    },
-    "Georgia": {
+    // {
+    //   capital: "Tallahassee",
+    //   state: "Florida",
+    //   abbreviation: "FL",
+    //   lat: 30.4518,
+    //   long: -84.27277,
+    
+    // },
+    {
       capital: "Atlanta",
+      state: "Georgia",
+      abbreviation: "GA",
       lat: 33.76,
-      long: -84.39
+      long: -84.39,     
+      population: 10519475 
     },
-    "Hawaii": {
+    {
       capital: "Honolulu",
+      state: "Hawaii",
+      abbreviation: "HI",
       lat: 21.30895,
-      long: -157.826182
+      long: -157.826182,
+      population: 1420491
     },
-    "Idaho": {
+    {
       capital: "Boise",
+      state: "Idaho",
+      abbreviation: "ID",
       lat: 43.613739,
-      long: -116.237651
+      long: -116.237651,
+      population: 1754208
     },
-    "Illinois": {
+    {
       capital: "Springfield",
+      state: "Illinois",
+      abbreviation: "IL",
       lat: 39.783250,
-      long: -89.650373
+      long: -89.650373,
+      population: 12741080
     },
-    "Indiana": {
+    {
       capital: "Indianapolis",
+      state: "Indiana",
+      abbreviation: "IN",
       lat: 39.790942,
-      long: -86.147685
+      long: -86.147685,
+      population: 6691878
     },
-    "Iowa": {
+    {
       capital: "Des Moines",
+      state: "Iowa",
+      abbreviation: "IA",
       lat: 41.590939,
-      long: -93.620866
+      long: -93.620866,
+      population: 3156145 
+
     },
-    "Kansas": {
+    {
       capital: "Topeka",
+      state: "Kansas",
+      abbreviation: "KS",
       lat: 39.04,
       long: -95.69
+,     population: 2911505
     },
-    "Kentucky": {
+    {
       capital: "Frankfort",
+      state: "Kentucky",
+      abbreviation: "KY",
       lat: 38.197274,
-      long: -84.86311
+      long: -84.86311,
+      population: 4468402
     },
-    "Louisiana": {
+    {
       capital: "Baton Rouge",
+      state: "Louisiana",
+      abbreviation: "LA",
       lat: 30.45809,
-      long: -91.140229
+      long: -91.140229,
+      population: 4659978
     },
-    "Maine": {
+    {
       capital: "Augusta",
+      state: "Maine",
+      abbreviation: "ME",
       lat: 44.323535,
-      long: -69.765261
+      long: -69.765261,
+      population: 1338404
     },
-    "Maryland": {
+    {
       capital: "Annapolis",
+      state: "Maryland",
+      abbreviation: "MD",
       lat: 38.972945,
-      long: -76.501157
+      long: -76.501157,
+      population: 6042718
     },
-    "Massachusetts": {
+    {
       capital: "Boston",
+      state: "Massachusetts",
+      abbreviation: "MA",
       lat: 42.2352,
-      long: -71.0275
+      long: -71.0275,
+      population: 6902149
     },
-    "Michigan": {
+    {
       capital: "Lansing",
+      state: "Michigan",
+      abbreviation: "MI",
       lat: 42.7335,
-      long: -84.5467
+      long: -84.5467,
+      population: 9995915
     },
-    "Minnesota": {
+    {
       capital: "Saint Paul",
+      state: "Minnesota",
+      abbreviation: "MN",
       lat: 44.95,
-      long: -93.094
+      long: -93.094,
+      population: 5611179
     },
-    "Mississippi": {
+    {
       capital: "Jackson",
+      state: "Mississippi",
+      abbreviation: "MS",
       lat: 32.320,
-      long: -90.207
+      long: -90.207,
+      population: 2986530
     },
-    "Missouri": {
+    {
       capital: "Jefferson City",
+      state: "Missouri",
+      abbreviation: "MO",
       lat: 38.572954,
-      long: -92.189283
+      long: -92.189283,
+      population: 6126452
     },
-    "Montana": {
+    {
       capital: "Helana",
+      state: "Montana",
+      abbreviation: "MT",
       lat: 46.595805,
-      long: -112.027031
+      long: -112.027031,
+      population: 1062305
     },
-    "Nebraska": {
+    {
       capital: "Lincoln",
+      state: "Nebraska",
+      abbreviation: "NE",
       lat: 40.809868,
-      long: -96.675345
+      long: -96.675345,
+      population: 1929268
     },
-    "Nevada": {
-      capital: "Carson City",
-      lat: 39.160949,
-      long: -119.753877
-    },
-    "New Hampshire": {
+    // {
+    //   capital: "Carson City",
+    //   state: "Nevada",
+    //   abbreviation: "NV",
+    //   lat: 39.160949,
+    //   long: -119.753877,
+    
+    // },
+    {
       capital: "Concord",
+      state: "New Hampshire",
+      abbreviation: "NH",
       lat: 43.220093,
-      long: -71.549127
+      long: -71.549127,
+      population: 1356458
     },
-    "New Jersey": {
-      capital: "Trenton",
-      lat: 40.221741,
-      long: -74.756138
-    },
-    "New Mexico": {
+    // {
+    //   capital: "Trenton",
+    //   state: "New Jersey",
+    //   abbreviation: "NJ",
+    //   lat: 40.221741,
+    //   long: -74.756138,
+    
+    // },
+    {
       capital: "Santa Fe",
+      state: "New Mexico",
+      abbreviation: "NM",
       lat: 35.667231,
-      long: -105.964575
+      long: -105.964575,
+      population: 2095428
     },
-    "New York": {
-      capital: "Albany",
-      lat: 42.659829,
-      long: -73.781339
-    },
-    "North Carolina": {
-      capital: "Raleigh",
-      lat: 35.771,
-      long: -78.638
-    },
-    "North Dakota": {
+    // {
+    //   capital: "Albany",
+    //   state: "New York",
+    //   abbreviation: "NY",
+    //   lat: 42.659829,
+    //   long: -73.781339,
+    
+    // },
+    // {
+    //   capital: "Raleigh",
+    //   state: "North Carolina",
+    //   abbreviation: "NC",
+    //   lat: 35.771,
+    //   long: -78.638,
+    
+    // },
+    {
       capital: "Bismarck",
+      state: "North Dakota",
+      abbreviation: "ND",
       lat: 48.813343,
-      long: -100.779004
+      long: -100.779004,
+      population: 760077
     },
-    "Ohio": {
+    {
       capital: "Columbus",
+      state: "Ohio",
+      abbreviation: "OH",
       lat: 39.962245,
-      long: -83.000647
+      long: -83.000647,
+      population: 11689442
     },
-    "Oklahoma": {
+    {
       capital: "Oklahoma City",
+      state: "Oklahoma",
+      abbreviation: "OK",
       lat: 35.482309,
-      long: -97.534994
+      long: -97.534994,
+      population: 3943079
     },
-    "Oregon": {
+    {
       capital: "Salem",
+      state: "Oregon",
+      abbreviation: "OR",
       lat: 44.931109,
-      long: -123.029159
+      long: -123.029159,
+      population: 4190713
     },
-    "Pennsylvania": {
+    {
       capital: "Harrisburg",
+      state: "Pennsylvania",
+      abbreviation: "PA",
       lat: 40.269789,
-      long: -76.875613
+      long: -76.875613,
+      population: 12807060
     },
-    "Rhode Island": {
+    {
       capital: "Providence",
+      state: "Rhode Island",
+      abbreviation: "RI",
       lat: 41.82355,
-      long: -71.422132
+      long: -71.422132,
+      population: 1057315
     },
-    "South Carolina": {
+    {
       capital: "Columbia",
+      state: "South Carolina",
+      abbreviation: "SC",
       lat: 34.000,
-      long: -81.035
+      long: -81.035,
+      population: 5084127
     },
-    "South Dakota": {
+    {
       capital: "Pierre",
+      state: "South Dakota",
+      abbreviation: "SD",
       lat: 44.367966,
-      long: -100.336378
+      long: -100.336378,
+      population: 882235
     },
-    "Tennessee": {
+    {
       capital: "Nashville",
+      state: "Tennessee",
+      abbreviation: "TN",
       lat: 36.165,
-      long: -86.784
+      long: -86.784,
+      population: 6770010
     },
-    "Texas": {
+    {
       capital: "Austin",
+      state: "Texas",
+      abbreviation: "TX",
       lat: 30.266667,
       long: -97.75
+,      population: 28701845
     },
-    "Utah": {
+    {
       capital: "Salt Lake City",
+      state: "Utah",
+      abbreviation: "UT",
       lat: 40.7547,
-      long: -111.892622
+      long: -111.892622,
+      population: 3161105
     },
-    "Vermont": {
+    {
       capital: "Montpelier",
+      state: "Vermont",
+      abbreviation: "VT",
       lat: 44.26639,
-      long: -72.57194
+      long: -72.57194,
+      population: 626299
     },
-    "Virginia": {
+    {
       capital: "Richmond",
+      state: "Virginia",
+      abbreviation: "VA",
       lat: 37.54,
       long: -77.46
+,      population: 8517685
     },
-    "Washington": {
+    {
       capital: "Olympia",
+      state: "Washington",
+      abbreviation: "WA",
       lat: 47.042418,
-      long: -122.893077
+      long: -122.893077,
+      population: 7535591
     },
-    "West Virginia": {
+    {
       capital: "Charleston",
+      state: "West Virginia",
+      abbreviation: "WV",
       lat: 38.349497,
-      long: -81.633294
+      long: -81.633294,
+      population: 1805832
     },
-    "Wisconsin": {
+    {
       capital: "Madison",
+      state: "Wisconsin",
+      abbreviation: "WI",
       lat: 43.074722,
-      long: -89.384444
+      long: -89.384444,
+      population: 5813568
     },
-    "Wyoming": {
-      capital: "Cheyenne",
-      lat: 41.145548,
-      long: -104.802042
-    }
-}
+    // {
+    //   capital: "Cheyenne",
+    //   state: "Wyoming",
+    //   abbreviation: "WY",
+    //   lat: 41.145548,
+    //   long: -104.802042,
+          
+    // }
+]
