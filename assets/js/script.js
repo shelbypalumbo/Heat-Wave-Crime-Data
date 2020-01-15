@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // initialize global variables
-    var input = "";
+    var natlHomicide = 4.96;
     $(document).on("click", ".dropdown-item", function() {
         var thisIndex = $(this).attr("data-index");
         mapboxgl.accessToken = 'pk.eyJ1IjoibGF3bmExMiIsImEiOiJjazU3ZXdrcjYwMzVuM2VtN25wanM5eGh4In0.tVXQj-3Lrl58e2SmJgyjmw';
@@ -23,15 +23,33 @@ $(document).ready(function () {
                 var recentYear = response.data.length - 1;
                 console.log(abbreviation + " state ");
                 console.log(response.data[recentYear]);
+
     
+                var murders = parseFloat(response.data[recentYear].value / stateCapitals[thisIndex].population) * 100000;
+                var murdersper = murders.toFixed(2);
+                var stateHomicides = parseFloat(murdersper);
+                console.log("state Homicides + 100");
+                console.log(stateHomicides + 100);
                 
     
-                var murdersPer = response.data[recentYear].value / stateCapitals[thisIndex].population;
+                $("#homicides").text("2018 Homicides: " + response.data[recentYear].value);
+                $("#hPerCapita").text(stateCapitals[thisIndex].abbreviation + " Homicides per 100,000: " + stateHomicides);
+                $("#national").text("National Homicides per 100,000: " + natlHomicide);
                 
-    
-                $("#homicides").text("Homicides: " + response.data[recentYear].value);
-                $("#hPerCapita").text("Homicides per Capita: " + murdersPer);
-    
+
+                if (stateHomicides < 2.5) {
+                    $("#comparative-p").text("Less than half national rate");
+                    $("#comparative-p").css({"color": "white", "background-color": "green", "width": "60%"});
+                } else if (stateHomicides > 2.5 && stateHomicides < natlHomicide) {
+                    $("#comparative-p").text("Below national rate");
+                    $("#comparative-p").css({"color": "white", "background-color": "blue", "width": "60%"});
+                } else if (stateHomicides > natlHomicide && stateHomicides < 5.5) {
+                    $("#comparative-p").text("Above national rate");
+                    $("#comparative-p").css({"color": "white", "background-color": "orange", "width": "60%"});
+                } else {
+                    $("#comparative-p").text("Far above national rate");
+                    $("#comparative-p").css({"color": "white", "background-color": "red", "width": "60%"});
+                }
                 
             })
         }

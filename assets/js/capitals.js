@@ -5,7 +5,9 @@ var stateCapitals = [
       abbreviation: "AL",
       lat: 32.361538,
       long: -86.279118,
-      population: 737438 
+      population: 737438,
+      centerLat: 32.505,
+      centerLong: -86.380
     },
     {
       capital: "Juneau",
