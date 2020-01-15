@@ -57,14 +57,12 @@ h1 {    font-family: 'Special Elite', cursive;
 .text-white {
     color:white;
 }
-.searches {
-    width:15%;
-}
+
 .data {
     width:30%;
 }
 .map-column {
-    width:55%;
+    width:70%;
 }
 tbody {
     color:black;

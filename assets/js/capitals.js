@@ -15,7 +15,9 @@ var stateCapitals = [
       abbreviation: "AK",
       lat: 58.301935,
       long: -134.419740,
-      population: 4887871
+      population: 4887871,
+      centerLat: 64.4354,
+      centerLong: -152.2812
     },
     {
       capital: "Phoenix",
@@ -23,7 +25,9 @@ var stateCapitals = [
       abbreviation: "AZ",
       lat: 33.448457,
       long: -112.073844,
-      population: 3013825 
+      population: 3013825,
+      centerLat: 34.185,
+      centerLong: -111.476
     },
     {
       capital: "Little Rock",
@@ -31,7 +35,9 @@ var stateCapitals = [
       abbreviation: "AR",
       lat: 34.736009,
       long: -92.331122,
-      population: 7171646
+      population: 7171646,
+      centerLat: 34.489,
+      centerLong: -92.181
     },
     {
       capital: "Sacramento",
@@ -39,7 +45,9 @@ var stateCapitals = [
       abbreviation: "CA",
       lat: 38.555605,
       long: -121.468926,
-      population: 39557045 
+      population: 39557045,
+      centerLat: 37.958,
+      centerLong: -119.2658
     },
     {
       capital: "Denver",
@@ -47,7 +55,9 @@ var stateCapitals = [
       abbreviation: "CO",
       lat: 39.7391667,
       long: -104.984167,
-      population: 569564
+      population: 569564,
+      centerLat: 39.0000,
+      centerLong: -105.325
     },
     {
       capital: "Hartford",
@@ -55,7 +65,9 @@ var stateCapitals = [
       abbreviation: "CT",
       lat: 41.767,
       long: -72.677,
-      population: 3572665
+      population: 3572665,
+      centerLat: 41.357,
+      centerLong: -72.424
     },
     {
       capital: "Dover",
@@ -63,23 +75,41 @@ var stateCapitals = [
       abbreviation: "DE",
       lat: 39.161921,
       long: -75.526755,
-      population: 967171
+      population: 967171,
+      centerLat: 38.5848,
+      centerLong: -75.3042
     },
-    // {
-    //   capital: "Tallahassee",
-    //   state: "Florida",
-    //   abbreviation: "FL",
-    //   lat: 30.4518,
-    //   long: -84.27277,
-    
-    // },
+    {
+      capital: "Washington, D.C.",
+      state: "District of Columbia",
+      abbreviation: "D.C.",
+      lat: 39.161921,
+      long: -75.526755,
+      population: 702455,
+      centerLat: 38.5415,
+      centerLong: -77.0058
+    },
+    // FL doesn't return FBI data
+    {
+      capital: "Tallahassee",
+      state: "Florida",
+      abbreviation: "FL",
+      lat: 30.4518,
+      long: -84.27277,
+      population:  21299325,
+      centerLat: 28.4053,
+      centerLong: -82.2736
+    },
+    // FL doesn't return FBI data
     {
       capital: "Atlanta",
       state: "Georgia",
       abbreviation: "GA",
       lat: 33.76,
       long: -84.39,     
-      population: 10519475 
+      population: 10519475,
+      centerLat: 32.39436,
+      centerLong: -83.26179
     },
     {
       capital: "Honolulu",
@@ -87,7 +117,9 @@ var stateCapitals = [
       abbreviation: "HI",
       lat: 21.30895,
       long: -157.826182,
-      population: 1420491
+      population: 1420491,
+      centerLat: 20.571,
+      centerLong: -157.156
     },
     {
       capital: "Boise",
@@ -95,7 +127,9 @@ var stateCapitals = [
       abbreviation: "ID",
       lat: 43.613739,
       long: -116.237651,
-      population: 1754208
+      population: 1754208,
+      centerLat: 44.154,
+      centerLong: -114.574
     },
     {
       capital: "Springfield",
@@ -103,7 +137,9 @@ var stateCapitals = [
       abbreviation: "IL",
       lat: 39.783250,
       long: -89.650373,
-      population: 12741080
+      population: 12741080,
+      centerLat: 39.44215,
+      centerLong: -89.30131
     },
     {
       capital: "Indianapolis",
@@ -111,7 +147,9 @@ var stateCapitals = [
       abbreviation: "IN",
       lat: 39.790942,
       long: -86.147685,
-      population: 6691878
+      population: 6691878,
+      centerLat: 39.45577,
+      centerLong: -86.26286
     },
     {
       capital: "Des Moines",
@@ -119,7 +157,9 @@ var stateCapitals = [
       abbreviation: "IA",
       lat: 41.590939,
       long: -93.620866,
-      population: 3156145 
+      population: 3156145,
+      centerLat: 41.577,
+      centerLong: -93.231
 
     },
     {
@@ -127,8 +167,10 @@ var stateCapitals = [
       state: "Kansas",
       abbreviation: "KS",
       lat: 39.04,
-      long: -95.69
-,     population: 2911505
+      long: -95.69,
+      population: 2911505,
+      centerLat: 38.299,
+      centerLong: -98.419
     },
     {
       capital: "Frankfort",
@@ -136,7 +178,9 @@ var stateCapitals = [
       abbreviation: "KY",
       lat: 38.197274,
       long: -84.86311,
-      population: 4468402
+      population: 4468402,
+      centerLat: 37.215,
+      centerLong: -84.304
     },
     {
       capital: "Baton Rouge",
@@ -144,7 +188,9 @@ var stateCapitals = [
       abbreviation: "LA",
       lat: 30.45809,
       long: -91.140229,
-      population: 4659978
+      population: 4659978,
+      centerLat: 30.581,
+      centerLong: -92.322
     },
     {
       capital: "Augusta",
@@ -152,7 +198,9 @@ var stateCapitals = [
       abbreviation: "ME",
       lat: 44.323535,
       long: -69.765261,
-      population: 1338404
+      population: 1338404,
+      centerLat: 45.15119982,
+      centerLong: -69.13599988
     },
     {
       capital: "Annapolis",
@@ -160,7 +208,9 @@ var stateCapitals = [
       abbreviation: "MD",
       lat: 38.972945,
       long: -76.501157,
-      population: 6042718
+      population: 6042718,
+      centerLat: 39.295,
+      centerLong: -77.223
     },
     {
       capital: "Boston",
@@ -168,7 +218,9 @@ var stateCapitals = [
       abbreviation: "MA",
       lat: 42.2352,
       long: -71.0275,
-      population: 6902149
+      population: 6902149,
+      centerLat: 42.223762,
+      centerLong: -71.553093
     },
     {
       capital: "Lansing",
@@ -176,7 +228,9 @@ var stateCapitals = [
       abbreviation: "MI",
       lat: 42.7335,
       long: -84.5467,
-      population: 9995915
+      population: 9995915,
+      centerLat: 45.37,
+      centerLong: -84.563
     },
     {
       capital: "Saint Paul",
@@ -184,7 +238,9 @@ var stateCapitals = [
       abbreviation: "MN",
       lat: 44.95,
       long: -93.094,
-      population: 5611179
+      population: 5611179,
+      centerLat: 46.15,
+      centerLong: -95.196
     },
     {
       capital: "Jackson",
@@ -192,7 +248,9 @@ var stateCapitals = [
       abbreviation: "MS",
       lat: 32.320,
       long: -90.207,
-      population: 2986530
+      population: 2986530,
+      centerLat: 32.489,
+      centerLong: -89.430
     },
     {
       capital: "Jefferson City",
@@ -200,7 +258,9 @@ var stateCapitals = [
       abbreviation: "MO",
       lat: 38.572954,
       long: -92.189283,
-      population: 6126452
+      population: 6126452,
+      centerLat: 32.489,
+      centerLong: -92.379
     },
     {
       capital: "Helana",
@@ -208,7 +268,9 @@ var stateCapitals = [
       abbreviation: "MT",
       lat: 46.595805,
       long: -112.027031,
-      population: 1062305
+      population: 1062305,
+      centerLat: 41.19,
+      centerLong: -109.383
     },
     {
       capital: "Lincoln",
@@ -216,63 +278,87 @@ var stateCapitals = [
       abbreviation: "NE",
       lat: 40.809868,
       long: -96.675345,
-      population: 1929268
+      population: 1929268,
+      centerLat: 41.3130,
+      centerLong: -99.5142
     },
-    // {
-    //   capital: "Carson City",
-    //   state: "Nevada",
-    //   abbreviation: "NV",
-    //   lat: 39.160949,
-    //   long: -119.753877,
-    
-    // },
+    // Nevada doesn't return FBI data
+    {
+      capital: "Carson City",
+      state: "Nevada",
+      abbreviation: "NV",
+      lat: 39.160949,
+      long: -119.753877,
+      population: 3034392,
+      centerLat: 39.303,
+      centerLong: -116.559
+    },
+    // Nevada doesn't return FBI data
     {
       capital: "Concord",
       state: "New Hampshire",
       abbreviation: "NH",
       lat: 43.220093,
       long: -71.549127,
-      population: 1356458
+      population: 1356458,
+      centerLat: 43.5657995,
+      centerLong: -714824994
     },
-    // {
-    //   capital: "Trenton",
-    //   state: "New Jersey",
-    //   abbreviation: "NJ",
-    //   lat: 40.221741,
-    //   long: -74.756138,
-    
-    // },
+    // New Jersey doesn't return FBI data
+    {
+      capital: "Trenton",
+      state: "New Jersey",
+      abbreviation: "NJ",
+      lat: 40.221741,
+      long: -74.756138,
+      population: 8908520,
+      centerLat: 40.412,
+      centerLong: -74.3330
+    },
+    // New Jersey doesn't return FBI data
     {
       capital: "Santa Fe",
       state: "New Mexico",
       abbreviation: "NM",
       lat: 35.667231,
       long: -105.964575,
-      population: 2095428
+      population: 2095428,
+      centerLat: 34.301,
+      centerLong: -106.67
     },
-    // {
-    //   capital: "Albany",
-    //   state: "New York",
-    //   abbreviation: "NY",
-    //   lat: 42.659829,
-    //   long: -73.781339,
-    
-    // },
-    // {
-    //   capital: "Raleigh",
-    //   state: "North Carolina",
-    //   abbreviation: "NC",
-    //   lat: 35.771,
-    //   long: -78.638,
-    
-    // },
+    // New York doesn't return FBI data
+    {
+      capital: "Albany",
+      state: "New York",
+      abbreviation: "NY",
+      lat: 42.659829,
+      long: -73.781339,
+      population: 19542209,
+      centerLat: 42.579,
+      centerLong: -76.10
+    },
+    // New York doesn't return FBI data
+    // North Carolina doesn't return FBI data
+    {
+      capital: "Raleigh",
+      state: "North Carolina",
+      abbreviation: "NC",
+      lat: 35.771,
+      long: -78.638,
+      population: 10383620,
+      centerLat: 35.362,
+      centerLong: -79.273
+    },
+    // North Carolina doesn't return FBI data
     {
       capital: "Bismarck",
       state: "North Dakota",
       abbreviation: "ND",
       lat: 48.813343,
       long: -100.779004,
-      population: 760077
+      population: 760077,
+      centerLat: 47.247,
+      centerLong: -100.341
     },
     {
       capital: "Columbus",
@@ -280,7 +366,9 @@ var stateCapitals = [
       abbreviation: "OH",
       lat: 39.962245,
       long: -83.000647,
-      population: 11689442
+      population: 11689442,
+      centerLat: 40.217,
+      centerLong: -82.445
     },
     {
       capital: "Oklahoma City",
@@ -288,7 +376,9 @@ var stateCapitals = [
       abbreviation: "OK",
       lat: 35.482309,
       long: -97.534994,
-      population: 3943079
+      population: 3943079,
+      centerLat: 35.322,
+      centerLong: -97.396
     },
     {
       capital: "Salem",
@@ -296,7 +386,9 @@ var stateCapitals = [
       abbreviation: "OR",
       lat: 44.931109,
       long: -123.029159,
-      population: 4190713
+      population: 4190713,
+      centerLat: 43.521,
+      centerLong: -120.587
     },
     {
       capital: "Harrisburg",
@@ -304,7 +396,9 @@ var stateCapitals = [
       abbreviation: "PA",
       lat: 40.269789,
       long: -76.875613,
-      population: 12807060
+      population: 12807060,
+      centerLat: 40.538,
+      centerLong: -77.448
     },
     {
       capital: "Providence",
@@ -312,7 +406,9 @@ var stateCapitals = [
       abbreviation: "RI",
       lat: 41.82355,
       long: -71.422132,
-      population: 1057315
+      population: 1057315,
+      centerLat: 41.4018,
+      centerLong: -71.3436
     },
     {
       capital: "Columbia",
@@ -320,7 +416,9 @@ var stateCapitals = [
       abbreviation: "SC",
       lat: 34.000,
       long: -81.035,
-      population: 5084127
+      population: 5084127,
+      centerLat: 33.498,
+      centerLong: -80.524
     },
     {
       capital: "Pierre",
@@ -328,7 +426,9 @@ var stateCapitals = [
       abbreviation: "SD",
       lat: 44.367966,
       long: -100.336378,
-      population: 882235
+      population: 882235,
+      centerLat: 44.241,
+      centerLong: -100.287
     },
     {
       capital: "Nashville",
@@ -336,15 +436,19 @@ var stateCapitals = [
       abbreviation: "TN",
       lat: 36.165,
       long: -86.784,
-      population: 6770010
+      population: 6770010,
+      centerLat: 35.477,
+      centerLong: -86.373
     },
     {
       capital: "Austin",
       state: "Texas",
       abbreviation: "TX",
       lat: 30.266667,
-      long: -97.75
-,      population: 28701845
+      long: -97.75,
+      population: 28701845,
+      centerLat: 31.232952,
+      centerLong: -99.101434
     },
     {
       capital: "Salt Lake City",
@@ -352,7 +456,9 @@ var stateCapitals = [
       abbreviation: "UT",
       lat: 40.7547,
       long: -111.892622,
-      population: 3161105
+      population: 3161105,
+      centerLat: 39.232,
+      centerLong: -111.411
     },
     {
       capital: "Montpelier",
@@ -360,15 +466,19 @@ var stateCapitals = [
       abbreviation: "VT",
       lat: 44.26639,
       long: -72.57194,
-      population: 626299
+      population: 626299,
+      centerLat: 43.556,
+      centerLong: -72.403
     },
     {
       capital: "Richmond",
       state: "Virginia",
       abbreviation: "VA",
       lat: 37.54,
-      long: -77.46
-,      population: 8517685
+      long: -77.46,
+      population: 8517685,
+      centerLat: 37.293,
+      centerLong: -78.338
     },
     {
       capital: "Olympia",
@@ -376,7 +486,9 @@ var stateCapitals = [
       abbreviation: "WA",
       lat: 47.042418,
       long: -122.893077,
-      population: 7535591
+      population: 7535591,
+      centerLat: 47.2,
+      centerLong: -120.161
     },
     {
       capital: "Charleston",
@@ -384,7 +496,9 @@ var stateCapitals = [
       abbreviation: "WV",
       lat: 38.349497,
       long: -81.633294,
-      population: 1805832
+      population: 1805832,
+      centerLat: 38.359,
+      centerLong: -80.422
     },
     {
       capital: "Madison",
@@ -392,14 +506,20 @@ var stateCapitals = [
       abbreviation: "WI",
       lat: 43.074722,
       long: -89.384444,
-      population: 5813568
+      population: 5813568,
+      centerLat: 44.2616,
+      centerLong: -90.074867
     },
-    // {
-    //   capital: "Cheyenne",
-    //   state: "Wyoming",
-    //   abbreviation: "WY",
-    //   lat: 41.145548,
-    //   long: -104.802042,
-          
-    // }
+    // Wyoming doesn't return FBI data
+    {
+      capital: "Cheyenne",
+      state: "Wyoming",
+      abbreviation: "WY",
+      lat: 41.145548,
+      long: -104.802042,
+      population: 577737,
+      centerLat: 42.5818,
+      centerLong: -107.4018
+    }
+    // Wyoming doesn't return FBI data
 ]
