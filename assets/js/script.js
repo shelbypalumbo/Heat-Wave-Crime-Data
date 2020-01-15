@@ -32,7 +32,7 @@ $(document).ready(function () {
                 console.log(stateHomicides + 100);
                 
     
-                $("#homicides").text("2018 Homicides: " + response.data[recentYear].value);
+                $("#homicides").text(stateCapitals[thisIndex].state + " Homicides: " + response.data[recentYear].value);
                 $("#hPerCapita").text(stateCapitals[thisIndex].abbreviation + " Homicides per 100,000: " + stateHomicides);
                 $("#national").text("National Homicides per 100,000: " + natlHomicide);
                 
