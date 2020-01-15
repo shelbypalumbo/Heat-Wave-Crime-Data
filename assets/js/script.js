@@ -14,7 +14,7 @@ $(document).ready(function () {
             });
         map
     });
-
+//------------------------------------------------------------------------------------------
     var stateCapitals = [
         AL = {
           capital: "Montgomery",
