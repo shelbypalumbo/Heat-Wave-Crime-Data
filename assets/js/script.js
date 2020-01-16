@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     $(document).on("click", ".dropdown-item", function() {
         var thisIndex = $(this).attr("data-index");
-        mapboxgl.accessToken = 'pk.eyJ1IjoibGF3bmExMiIsImEiOiJjazU3ZXdrcjYwMzVuM2VtN25wanM5eGh4In0.tVXQj-3Lrl58e2SmJgyjmw';
+        mapboxgl.accessToken = myAccessToken;
             
             // mapbox API call
             var map = new mapboxgl.Map({

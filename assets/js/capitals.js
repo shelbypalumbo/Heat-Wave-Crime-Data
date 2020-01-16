@@ -1,3 +1,14 @@
+/* states that don't return data:
+    CA
+    DC
+    FL
+    NV
+    NJ
+    NY
+    NC
+    WY
+*/
+
 var stateCapitals = [
     {
       capital: "Montgomery",
