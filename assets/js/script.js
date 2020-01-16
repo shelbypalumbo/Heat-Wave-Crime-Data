@@ -15,7 +15,7 @@ $(document).ready(function () {
                 container: 'map', // container id
                 style: 'mapbox://styles/mapbox/dark-v10', // stylesheet location
                 center: [stateCapitals[thisIndex].centerLong, stateCapitals[thisIndex].centerLat], // starting position [lng, lat]
-                zoom: 7 // starting zoom
+                zoom: stateCapitals[thisIndex].zoom // starting zoom
             });
 
             // Begin playing with mapbox clusters here --------------------------------------------------------------------------------------------------
@@ -155,23 +155,23 @@ $(document).ready(function () {
                 //         $("#national").text("National Homicides per 100,000: " + natlHomicide);
                 // } 
                 // else {}
-                    
+                $("#crime-header").text("2018 Homicides");
                 $("#homicides").text(stateCapitals[thisIndex].state + " Homicides: " + response.data[recentYear].value);
                 $("#hPerCapita").text(stateCapitals[thisIndex].abbreviation + " Homicides per 100,000: " + stateHomicides);
-                $("#national").text("National Homicides per 100,000: " + natlHomicide);
+                $("#national").text("US Homicides per 100,000: " + natlHomicide);
                 
                 if (stateHomicides < 2.5) {
-                    $("#comparative-p").text("Less than half national rate");
-                    $("#comparative-p").css({"color": "white", "background-color": "green", "width": "60%"});
+                    $("#rating").text("Very Safe");
+                    $("#rating").css({"text-align": "center", "color": "white", "background-color": "green", "width": "60%"});
                 } else if (stateHomicides > 2.5 && stateHomicides < natlHomicide) {
-                    $("#comparative-p").text("Below national rate");
-                    $("#comparative-p").css({"color": "white", "background-color": "blue", "width": "60%"});
+                    $("#rating").text("Safe");
+                    $("#rating").css({"text-align": "center", "color": "white", "background-color": "blue", "width": "60%"});
                 } else if (stateHomicides > natlHomicide && stateHomicides < 5.5) {
-                    $("#comparative-p").text("Above national rate");
-                    $("#comparative-p").css({"color": "white", "background-color": "orange", "width": "60%"});
+                    $("#rating").text("Dangerous");
+                    $("#rating").css({"text-align": "center", "color": "white", "background-color": "orange", "width": "60%"});
                 } else {
-                    $("#comparative-p").text("Far above national rate");
-                    $("#comparative-p").css({"color": "white", "background-color": "red", "width": "60%"});
+                    $("#rating").text("Very Dangerous");
+                    $("#rating").css({"text-align": "center", "color": "white", "background-color": "red", "width": "60%"});
                 }
             })
 
@@ -197,7 +197,7 @@ $(document).ready(function () {
 
     
     
-var stateAbbreviations = ["AL", "AZ", "AR", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY",]
+// var stateAbbreviations = ["AL", "AZ", "AR", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY",]
 // for (var i = 0; i < stateAbbreviations.length; i++) {
 //     fbi(stateAbbreviations[i]);
 // }
