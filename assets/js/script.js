@@ -1,17 +1,118 @@
 $(document).ready(function () {
     // initialize global variables
-    var input = "";
+    var natlHomicide = 4.96;
     $(document).on("click", ".dropdown-item", function() {
-        // 
+        var thisIndex = $(this).attr("data-index");
         mapboxgl.accessToken = 'pk.eyJ1IjoibGF3bmExMiIsImEiOiJjazU3ZXdrcjYwMzVuM2VtN25wanM5eGh4In0.tVXQj-3Lrl58e2SmJgyjmw';
             
             // mapbox API call
             var map = new mapboxgl.Map({
                 container: 'map', // container id
-                style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-                center: [stateCapitals[0].long, stateCapitals[0].lat], // starting position [lng, lat]
-                zoom: 12 // starting zoom
+                style: 'mapbox://styles/mapbox/dark-v10', // stylesheet location
+                center: [stateCapitals[thisIndex].centerLong, stateCapitals[thisIndex].centerLat], // starting position [lng, lat]
+                zoom: 7 // starting zoom
             });
+            // Begin playing with mapbox clusters here --------------------------------------------------------------------------------------------------
+            /* ------------------------------------------------------------------------------------------------------------------------------------------
+            map.on('load', function() {
+                // Add a new source from our GeoJSON data and set the
+                // 'cluster' option to true. GL-JS will add the point_count property to your source data.
+                map.addSource('earthquakes', {
+                    type: 'geojson',
+                    // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
+                    // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
+                    data:
+                        'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson',
+                    cluster: true,
+                    clusterMaxZoom: 14, // Max zoom to cluster points on
+                    clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+                });
+        
+                map.addLayer({
+                    id: 'clusters',
+                    type: 'circle',
+                    source: 'earthquakes',
+                    filter: ['has', 'point_count'],
+                    paint: {
+                        // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+                        // with three steps to implement three types of circles:
+                        //   * Blue, 20px circles when point count is less than 100
+                        //   * Yellow, 30px circles when point count is between 100 and 750
+                        //   * Pink, 40px circles when point count is greater than or equal to 750
+                        'circle-color': [
+                            'step',
+                            ['get', 'point_count'],
+                            '#51bbd6',
+                            100,
+                            '#f1f075',
+                            750,
+                            '#f28cb1'
+                        ],
+                        'circle-radius': [
+                            'step',
+                            ['get', 'point_count'],
+                            20,
+                            100,
+                            30,
+                            750,
+                            40
+                        ]
+                    }
+                });
+        
+                map.addLayer({
+                    id: 'cluster-count',
+                    type: 'symbol',
+                    source: 'earthquakes',
+                    filter: ['has', 'point_count'],
+                    layout: {
+                        'text-field': '{point_count_abbreviated}',
+                        'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+                        'text-size': 12
+                    }
+                });
+        
+                map.addLayer({
+                    id: 'unclustered-point',
+                    type: 'circle',
+                    source: 'earthquakes',
+                    filter: ['!', ['has', 'point_count']],
+                    paint: {
+                        'circle-color': '#11b4da',
+                        'circle-radius': 4,
+                        'circle-stroke-width': 1,
+                        'circle-stroke-color': '#fff'
+                    }
+                });
+        
+                // inspect a cluster on click
+                map.on('click', 'clusters', function(e) {
+                    var features = map.queryRenderedFeatures(e.point, {
+                        layers: ['clusters']
+                    });
+                    var clusterId = features[0].properties.cluster_id;
+                    map.getSource('earthquakes').getClusterExpansionZoom(
+                        clusterId,
+                        function(err, zoom) {
+                            if (err) return;
+        
+                            map.easeTo({
+                                center: features[0].geometry.coordinates,
+                                zoom: zoom
+                            });
+                        }
+                    );
+                });
+        
+                map.on('mouseenter', 'clusters', function() {
+                    map.getCanvas().style.cursor = 'pointer';
+                });
+                map.on('mouseleave', 'clusters', function() {
+                    map.getCanvas().style.cursor = '';
+                });
+            });
+            ------------------------------------------------------------------------------------------------------------------------------------------ */
+            // End playing with mapbox clusters here --------------------------------------------------------------------------------------------------
         map
     });
 //Text fade in effect----------------------------------------------------------------------
@@ -320,23 +421,36 @@ $(document).ready(function () {
           lat: 41.145548,
           long: -104.802042
         }
-    ]
+        fbi(stateCapitals[thisIndex].abbreviation);
+
+    });
     
     // when user selects a state from the dropdown menu, map appears
     $(".dropdown-toggle").on("click", function() {
         $(".dropdown-menu").empty();
         for (var i = 0; i < stateCapitals.length; i++) {
             var stateName = $("<button>").addClass("dropdown-item");
+            stateName.attr("data-index", i);
             stateName.text(stateCapitals[i].state);
             $(".dropdown-menu").append(stateName);
-            console.log(stateCapitals[i].state);
+            
         }
     })
     
+
+
+    
+    
+var stateAbbreviations = ["AL", "AZ", "AR", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY",]
+// for (var i = 0; i < stateAbbreviations.length; i++) {
+//     fbi(stateAbbreviations[i]);
+// }
+    
+    // end document ready ----------------------------------------------------------------------- 
 });
 
     // code to make map appear using user input and search button START
-    /*
+    /*    
     
         // on-click to make map appear
         $(".success").on("click", function() {
@@ -354,8 +468,8 @@ $(document).ready(function () {
             }
         });
 
-        this function takes a location input and makes a call to the openweathermap API...
-        ...then uses the returned latitude & longitude as inputs for the initilization of the map from mapbox
+        // this function takes a location input and makes a call to the openweathermap API...
+        // ...then uses the returned latitude & longitude as inputs for the initilization of the map from mapbox
         var getCity = function(place) {
             var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + place + "&units=imperial" + "&apikey=4d721e459b51eed9d4d8047d079984e6";
 
@@ -394,6 +508,16 @@ $(document).ready(function () {
                 map
             });
         };
+
+        var capitalsCall = function() {
+        var queryURL = "https://gist.githubusercontent.com/jpriebe/d62a45e29f24e843c974/raw/b1d3066d245e742018bce56e41788ac7afa60e29/us_state_capitals.json"
+        $.ajax({
+            url:queryURL,
+            method:"GET"
+        }).then(function(response) {
+          console.log(response);
+        });
+    }
 
     */
     // code to make map appear using user input and search button END
