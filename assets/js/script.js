@@ -1,6 +1,11 @@
 $(document).ready(function () {
+    //Text fade in effect----------------------------------------------------------------------
+    $('#page_effect').fadeIn(2000);
+    //------------------------------------------------------------------------------------------
+
     // initialize global variables
     var natlHomicide = 4.96;
+
     $(document).on("click", ".dropdown-item", function() {
         var thisIndex = $(this).attr("data-index");
         mapboxgl.accessToken = 'pk.eyJ1IjoibGF3bmExMiIsImEiOiJjazU3ZXdrcjYwMzVuM2VtN25wanM5eGh4In0.tVXQj-3Lrl58e2SmJgyjmw';
@@ -115,7 +120,8 @@ $(document).ready(function () {
             ------------------------------------------------------------------------------------------------------------------------------------------ */
             // End playing with mapbox clusters here --------------------------------------------------------------------------------------------------
         
-        map
+        
+
         var fbi = function(abbreviation) {
             var queryURL = "https://api.usa.gov/crime/fbi/sapi/api/nibrs/homicide/offender/states/" + abbreviation + "/count?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv";
     
@@ -168,7 +174,9 @@ $(document).ready(function () {
                     $("#comparative-p").css({"color": "white", "background-color": "red", "width": "60%"});
                 }
             })
+
         }
+        map
         fbi(stateCapitals[thisIndex].abbreviation);
 
     });
