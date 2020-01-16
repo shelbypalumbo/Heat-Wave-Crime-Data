@@ -27,14 +27,16 @@
 </head>
 
 <body>
-  
+
   <!--------Top Bar Heading---------->
-  <div class="row callout medium">
-    <div class="columns text-center">
+  <div class="callout medium">
+    <div class="column text-center">
       <h1>Heat Wave Crime Data</h1>
-      <h3 class="subheader">Find your safe neighborhood.</h3>
+    </div>
+    <div id="page_effect" style="display:none;">
+      <h4 class="subheader">Find your safe neighborhood.</h4>
+    </div>
   </div>
-</div>
 
   <div class="container">
 
@@ -42,10 +44,11 @@
   <div class="columns medium-3 large-3 dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
       aria-haspopup="true" aria-expanded="false">
-      Dropdown button
+      Select a State:
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     </div>
+    <div class="crimeData"></div>
   </div>
 
 
@@ -58,10 +61,10 @@
   </div>
   <!-----Footer-->
   <footer>
-    <p>&#169; Heat Wave Co.</p>
+    <p>&#169; 2020 Heat Wave Co.</p>
 </footer>
 
-
+<!--</div>-->
 
   <!---------------SCRIPT FILES---------------------------------------------------------------->
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -75,7 +78,7 @@
   <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
   <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
-  <!--Geolocator Link End-->
+  <!-- Geolocator Link End -->
 
   <!-- Bootstrap docs start -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -87,6 +90,12 @@
   <!-- Bootstrap docs end -->
 
   <script src="assets/js/script.js"></script>
+
+<script>
+$(document).ready(function(){	
+	$('#page_effect').fadeIn(2000);
+});
+</script>
 
 </body>
 
