@@ -12,6 +12,7 @@ $(document).ready(function () {
                 center: [stateCapitals[thisIndex].centerLong, stateCapitals[thisIndex].centerLat], // starting position [lng, lat]
                 zoom: 7 // starting zoom
             });
+
             // Begin playing with mapbox clusters here --------------------------------------------------------------------------------------------------
             /* ------------------------------------------------------------------------------------------------------------------------------------------
             map.on('load', function() {
@@ -113,6 +114,7 @@ $(document).ready(function () {
             });
             ------------------------------------------------------------------------------------------------------------------------------------------ */
             // End playing with mapbox clusters here --------------------------------------------------------------------------------------------------
+        
         map
         var fbi = function(abbreviation) {
             var queryURL = "https://api.usa.gov/crime/fbi/sapi/api/nibrs/homicide/offender/states/" + abbreviation + "/count?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv";
@@ -123,7 +125,8 @@ $(document).ready(function () {
             }).then(function(response) {
                 var recentYear = response.data.length - 1;
                 console.log(abbreviation + " state ");
-                console.log(response.data[recentYear]);
+                // console.log(response);
+                console.log(response.data[recentYear].value);
 
     
                 var murders = parseFloat(response.data[recentYear].value / stateCapitals[thisIndex].population) * 100000;
@@ -132,12 +135,25 @@ $(document).ready(function () {
                 console.log("state Homicides + 100");
                 console.log(stateHomicides + 100);
                 
-    
+                //the if statement isn't working
+                // if (response.data[recentYear] = false
+                //     // stateCapitals[thisIndex].abbreviation == "NV" ||
+                //     // stateCapitals[thisIndex].abbreviation == "NJ" ||
+                //     // stateCapitals[thisIndex].abbreviation == "NY" ||
+                //     // stateCapitals[thisIndex].abbreviation == "NC" ||
+                //     // stateCapitals[thisIndex].abbreviation == "WY"
+                //     ) {
+                        
+                //         $("#homicides").text(stateCapitals[thisIndex].state + " Homicides: N/A");
+                //         $("#hPerCapita").text(stateCapitals[thisIndex].abbreviation + " Homicides per 100,000: N/A");
+                //         $("#national").text("National Homicides per 100,000: " + natlHomicide);
+                // } 
+                // else {}
+                    
                 $("#homicides").text(stateCapitals[thisIndex].state + " Homicides: " + response.data[recentYear].value);
                 $("#hPerCapita").text(stateCapitals[thisIndex].abbreviation + " Homicides per 100,000: " + stateHomicides);
                 $("#national").text("National Homicides per 100,000: " + natlHomicide);
                 
-
                 if (stateHomicides < 2.5) {
                     $("#comparative-p").text("Less than half national rate");
                     $("#comparative-p").css({"color": "white", "background-color": "green", "width": "60%"});
@@ -151,7 +167,6 @@ $(document).ready(function () {
                     $("#comparative-p").text("Far above national rate");
                     $("#comparative-p").css({"color": "white", "background-color": "red", "width": "60%"});
                 }
-                
             })
         }
         fbi(stateCapitals[thisIndex].abbreviation);
