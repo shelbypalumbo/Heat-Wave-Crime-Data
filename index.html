@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Heat Wave Crime Data</title>
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   <!--Fonts & Bootstrap CSS-->
   <link href="https://fonts.googleapis.com/css?family=Niramit|Odibee+Sans|Righteous&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
@@ -48,7 +48,13 @@
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     </div>
-    <div class="crimeData"></div>
+    <div class="crimeData">
+        <h4 id="crime-header"></h4>
+        <p id="homicides"></p>
+        <p id="hPerCapita"></p>
+        <p id="national"></p>
+        <p id="rating"></p>
+    </div>
   </div>
 
 
@@ -89,6 +95,8 @@
     crossorigin="anonymous"></script>
   <!-- Bootstrap docs end -->
 
+  <script src="assets/js/key.js"></script>
+  <script src="assets/js/capitals.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="assets/js/capitals.js"></script>
 </body>

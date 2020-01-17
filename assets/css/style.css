@@ -42,9 +42,10 @@ footer {    font-family: 'Special Elite', cursive;
             height: 60px;
             padding: 12px;
             border-top: 5px solid orange;
-            bottom: 0px;
+            bottom: 0;
             width: 100%;
-            display: block;       
+            display: block;  
+            position: fixed;     
 }
 
 li {    background-color:white;
@@ -59,3 +60,6 @@ li {    background-color:white;
                     border: 1px orange;
 
                 }
+.crimeData {
+    color: orange;
+}
