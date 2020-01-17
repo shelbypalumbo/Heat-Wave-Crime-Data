@@ -1,6 +1,6 @@
 $(document).ready(function () {
     //Text fade in effect----------------------------------------------------------------------
-    $('#page_effect').fadeIn(2000);
+    $('#page_effect').fadeIn(3000);
     //------------------------------------------------------------------------------------------
 
     // initialize global variables
@@ -157,32 +157,44 @@ $(document).ready(function () {
                 }
 
     
-                // var murders = parseFloat(response.data[recentYear].value / stateCapitals[thisIndex].population) * 100000;
-                // var murdersper = murders.toFixed(2);
-                // var stateHomicides = parseFloat(murdersper);
-                // console.log("state Homicides + 100");
-                // console.log(stateHomicides + 100);
-                
+                var murders = parseFloat(response.data[recentYear].value / stateCapitals[thisIndex].population) * 100000;
+                var murdersper = murders.toFixed(2);
+                var stateHomicides = parseFloat(murdersper);
+                console.log("state Homicides + 100");
+                console.log(stateHomicides + 100);
                
-                // $("#crime-header").text("2018 Homicides");
-                // $("#homicides").text(stateCapitals[thisIndex].state + " Homicides: " + response.data[recentYear].value);
-                // $("#hPerCapita").text(stateCapitals[thisIndex].abbreviation + " Homicides per 100,000: " + stateHomicides);
-                // $("#national").text("US Homicides per 100,000: " + natlHomicide);
                 
-                if (stateHomicides == 0 ) {
-                    $("#rating").text("Inconclusive");
-                    $("#rating").css({"text-align": "center", "color": "white", "background-color": "black", "width": "60%"});
-                } else if (stateHomicides < 2.5) {
-                    $("#rating").text("Very Safe");
+                //the if statement isn't working
+                // if (response.data[recentYear] = false
+                //     // stateCapitals[thisIndex].abbreviation == "NV" ||
+                //     // stateCapitals[thisIndex].abbreviation == "NJ" ||
+                //     // stateCapitals[thisIndex].abbreviation == "NY" ||
+                //     // stateCapitals[thisIndex].abbreviation == "NC" ||
+                //     // stateCapitals[thisIndex].abbreviation == "WY"
+                //     ) {
+                        
+                //         $("#homicides").text(stateCapitals[thisIndex].state + " Homicides: N/A");
+                //         $("#hPerCapita").text(stateCapitals[thisIndex].abbreviation + " Homicides per 100,000: N/A");
+                //         $("#national").text("National Homicides per 100,000: " + natlHomicide);
+                // } 
+                // else {}
+                $("#crime-header").text("2018 Homicides");
+                $("#homicides").text(stateCapitals[thisIndex].state + " Total Homicides: " + response.data[recentYear].value);
+                $("#hPerCapita").text(stateCapitals[thisIndex].abbreviation + " Homicides per 100,000: " + stateHomicides);
+                $("#national").text("US Homicides per 100,000: " + natlHomicide);
+
+
+                if (stateHomicides < 2.5) {
+                    $("#rating").html("Very Safe" + ' '+ '<i class="fas fa-shield-alt"></i>');
                     $("#rating").css({"text-align": "center", "color": "white", "background-color": "green", "width": "60%"});
                 } else if (stateHomicides > 2.5 && stateHomicides < natlHomicide) {
-                    $("#rating").text("Safe");
+                    $("#rating").html("Safe" + ' ' + '<i class="fas fa-check"></i>');
                     $("#rating").css({"text-align": "center", "color": "white", "background-color": "blue", "width": "60%"});
                 } else if (stateHomicides > natlHomicide && stateHomicides < 5.5) {
-                    $("#rating").text("Dangerous");
+                    $("#rating").html("Dangerous" + ' ' + '<i class="fas fa-exclamation-circle"></i>');
                     $("#rating").css({"text-align": "center", "color": "white", "background-color": "orange", "width": "60%"});
                 } else {
-                    $("#rating").text("Very Dangerous");
+                    $("#rating").html("Very Dangerous" + ' ' + '<i class="fas fa-exclamation-triangle"></i>');
                     $("#rating").css({"text-align": "center", "color": "white", "background-color": "red", "width": "60%"});
                 }
             }).fail(function(error) {
@@ -223,4 +235,4 @@ $(document).ready(function () {
     // end document ready ----------------------------------------------------------------------- 
 });
 
-    
+   
