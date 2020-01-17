@@ -1,6 +1,6 @@
 $(document).ready(function () {
     //Text fade in effect----------------------------------------------------------------------
-    $('#page_effect').fadeIn(2000);
+    $('#page_effect').fadeIn(3000);
     //------------------------------------------------------------------------------------------
 
     // initialize global variables
