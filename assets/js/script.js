@@ -121,7 +121,7 @@ $(document).ready(function () {
             // End playing with mapbox clusters here --------------------------------------------------------------------------------------------------
         
         
-
+        /*    
         var fbi = function(abbreviation) {
             var queryURL = "https://api.usa.gov/crime/fbi/sapi/api/nibrs/homicide/offender/states/" + abbreviation + "/count?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv";
     
@@ -231,7 +231,7 @@ $(document).ready(function () {
                     map.getCanvas().style.cursor = '';
                 });
 
-                
+            */
             //    Cluster Map Layer end --------------------------------------------------------------------------------
 
     
