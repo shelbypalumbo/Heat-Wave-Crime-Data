@@ -18,16 +18,32 @@ $(document).ready(function () {
                 zoom: stateCapitals[thisIndex].zoom // starting zoom
             });
 
-            // Begin playing with mapbox clusters here --------------------------------------------------------------------------------------------------
-           map.on('load', function() {
-                // Add a new source from our GeoJSON data and set the
-                // 'cluster' option to true. GL-JS will add the point_count property to your source data.
-                map.addSource('earthquakes', {
+            
+        
+        
+            
+        var fbi = function(abbreviation) {
+            var queryURL = "https://api.usa.gov/crime/fbi/sapi/api/nibrs/homicide/offender/states/" + abbreviation + "/count?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv";
+    
+            $.ajax({
+                url:queryURL,
+                method:"GET"
+            }).done(function(response) {
+                
+                var recentYear = response.data.length - 1;
+                console.log(abbreviation + " state ");
+                
+                console.log(response.data[recentYear]);
+                map
+
+                // Cluster Map Layer begin --------------------------------------------------------------------------------
+                
+                map.addSource('homicides', {
                     type: 'geojson',
                     // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
                     // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
                     data:
-                        'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson',
+                        "https://knightmac19.github.io/geoJSON/homicides.geojson",
                     cluster: true,
                     clusterMaxZoom: 14, // Max zoom to cluster points on
                     clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
@@ -36,7 +52,7 @@ $(document).ready(function () {
                 map.addLayer({
                     id: 'clusters',
                     type: 'circle',
-                    source: 'earthquakes',
+                    source: 'homicides',
                     filter: ['has', 'point_count'],
                     paint: {
                         // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
@@ -50,7 +66,7 @@ $(document).ready(function () {
                             '#51bbd6',
                             100,
                             '#f1f075',
-                            750,
+                            300,
                             '#f28cb1'
                         ],
                         'circle-radius': [
@@ -59,7 +75,7 @@ $(document).ready(function () {
                             20,
                             100,
                             30,
-                            750,
+                            300,
                             40
                         ]
                     }
@@ -68,7 +84,7 @@ $(document).ready(function () {
                 map.addLayer({
                     id: 'cluster-count',
                     type: 'symbol',
-                    source: 'earthquakes',
+                    source: 'homicides',
                     filter: ['has', 'point_count'],
                     layout: {
                         'text-field': '{point_count_abbreviated}',
@@ -80,7 +96,7 @@ $(document).ready(function () {
                 map.addLayer({
                     id: 'unclustered-point',
                     type: 'circle',
-                    source: 'earthquakes',
+                    source: 'homicides',
                     filter: ['!', ['has', 'point_count']],
                     paint: {
                         'circle-color': '#11b4da',
@@ -96,7 +112,7 @@ $(document).ready(function () {
                         layers: ['clusters']
                     });
                     var clusterId = features[0].properties.cluster_id;
-                    map.getSource('earthquakes').getClusterExpansionZoom(
+                    map.getSource('homicides').getClusterExpansionZoom(
                         clusterId,
                         function(err, zoom) {
                             if (err) return;
@@ -115,123 +131,8 @@ $(document).ready(function () {
                 map.on('mouseleave', 'clusters', function() {
                     map.getCanvas().style.cursor = '';
                 });
-            });
-            //------------------------------------------------------------------------------------------------------------------------------------------ */
-            // End playing with mapbox clusters here --------------------------------------------------------------------------------------------------
-        
-        
+
             
-        var fbi = function(abbreviation) {
-            var queryURL = "https://api.usa.gov/crime/fbi/sapi/api/nibrs/homicide/offender/states/" + abbreviation + "/count?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv";
-    
-            $.ajax({
-                url:queryURL,
-                method:"GET"
-            }).done(function(response) {
-                console.log("heywe've made it")
-                var recentYear = response.data.length - 1;
-                console.log(abbreviation + " state ");
-                console.log(response);
-                console.log(response.data[recentYear]);
-                map
-
-                // Cluster Map Layer begin --------------------------------------------------------------------------------
-                /*
-                map.addSource('fbi', {
-                    type: 'json',
-                    // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
-                    // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
-                    data:
-                        response.data[recentYear],
-                    cluster: true,
-                    clusterMaxZoom: 14, // Max zoom to cluster points on
-                    clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
-                });
-        
-                map.addLayer({
-                    id: 'clusters',
-                    type: 'circle',
-                    source: 'fbi',
-                    filter: ['has', 'value'],
-                    paint: {
-                        // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
-                        // with three steps to implement three types of circles:
-                        //   * Blue, 20px circles when point count is less than 100
-                        //   * Yellow, 30px circles when point count is between 100 and 750
-                        //   * Pink, 40px circles when point count is greater than or equal to 750
-                        'circle-color': [
-                            'step',
-                            ['get', 'value'],
-                            '#51bbd6',
-                            100,
-                            '#f1f075',
-                            750,
-                            '#f28cb1'
-                        ],
-                        'circle-radius': [
-                            'step',
-                            ['get', 'value'],
-                            20,
-                            100,
-                            30,
-                            750,
-                            40
-                        ]
-                    }
-                });
-        
-                map.addLayer({
-                    id: 'cluster-count',
-                    type: 'symbol',
-                    source: 'fbi',
-                    filter: ['has', 'value'],
-                    layout: {
-                        'text-field': 'value',
-                        'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-                        'text-size': 12
-                    }
-                });
-        
-                map.addLayer({
-                    id: 'unclustered-point',
-                    type: 'circle',
-                    source: 'earthquakes',
-                    filter: ['!', ['has', 'value']],
-                    paint: {
-                        'circle-color': '#11b4da',
-                        'circle-radius': 4,
-                        'circle-stroke-width': 1,
-                        'circle-stroke-color': '#fff'
-                    }
-                });
-        
-                // inspect a cluster on click
-                map.on('click', 'clusters', function(e) {
-                    var features = map.queryRenderedFeatures(e.point, {
-                        layers: ['clusters']
-                    });
-                    var clusterId = features[0].properties.cluster_id;
-                    map.getSource('fbi').getClusterExpansionZoom(
-                        clusterId,
-                        function(err, zoom) {
-                            if (err) return;
-        
-                            map.easeTo({
-                                center: features[0].geometry.coordinates,
-                                zoom: zoom
-                            });
-                        }
-                    );
-                });
-        
-                map.on('mouseenter', 'clusters', function() {
-                    map.getCanvas().style.cursor = 'pointer';
-                });
-                map.on('mouseleave', 'clusters', function() {
-                    map.getCanvas().style.cursor = '';
-                });
-
-            */
             //    Cluster Map Layer end --------------------------------------------------------------------------------
                 // console.log(response);
                 console.log(response.data[recentYear]);
