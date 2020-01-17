@@ -128,39 +128,49 @@ $(document).ready(function () {
             $.ajax({
                 url:queryURL,
                 method:"GET"
-            }).then(function(response) {
+            }).done(function(response) {
+                console.log("heywe've made it")
                 var recentYear = response.data.length - 1;
                 console.log(abbreviation + " state ");
                 // console.log(response);
-                console.log(response.data[recentYear].value);
+                console.log(response.data[recentYear]);
+                var stateHomicides = ""
+                if (response.data.length < 1) {
+                    stateHomicides = 0
+                    $("#homicides").text(stateCapitals[thisIndex].state + " Homicides: N/A");
+                    $("#hPerCapita").text(stateCapitals[thisIndex].abbreviation + " Homicides per 100,000: N/A");
+                    $("#national").text("National Homicides per 100,000: " + natlHomicide);
+                } else {
+                    var murders = parseFloat(response.data[recentYear].value / stateCapitals[thisIndex].population) * 100000;
+                    var murdersper = murders.toFixed(2);
+                    stateHomicides = parseFloat(murdersper);
+                    console.log("state Homicides + 100");
+                    console.log(stateHomicides + 100);
+                    
+                
+                    $("#crime-header").text("2018 Homicides");
+                    $("#homicides").text(stateCapitals[thisIndex].state + " Homicides: " + response.data[recentYear].value);
+                    $("#hPerCapita").text(stateCapitals[thisIndex].abbreviation + " Homicides per 100,000: " + stateHomicides);
+                    $("#national").text("US Homicides per 100,000: " + natlHomicide);
+                }
 
     
-                var murders = parseFloat(response.data[recentYear].value / stateCapitals[thisIndex].population) * 100000;
-                var murdersper = murders.toFixed(2);
-                var stateHomicides = parseFloat(murdersper);
-                console.log("state Homicides + 100");
-                console.log(stateHomicides + 100);
+                // var murders = parseFloat(response.data[recentYear].value / stateCapitals[thisIndex].population) * 100000;
+                // var murdersper = murders.toFixed(2);
+                // var stateHomicides = parseFloat(murdersper);
+                // console.log("state Homicides + 100");
+                // console.log(stateHomicides + 100);
                 
-                //the if statement isn't working
-                // if (response.data[recentYear] = false
-                //     // stateCapitals[thisIndex].abbreviation == "NV" ||
-                //     // stateCapitals[thisIndex].abbreviation == "NJ" ||
-                //     // stateCapitals[thisIndex].abbreviation == "NY" ||
-                //     // stateCapitals[thisIndex].abbreviation == "NC" ||
-                //     // stateCapitals[thisIndex].abbreviation == "WY"
-                //     ) {
-                        
-                //         $("#homicides").text(stateCapitals[thisIndex].state + " Homicides: N/A");
-                //         $("#hPerCapita").text(stateCapitals[thisIndex].abbreviation + " Homicides per 100,000: N/A");
-                //         $("#national").text("National Homicides per 100,000: " + natlHomicide);
-                // } 
-                // else {}
-                $("#crime-header").text("2018 Homicides");
-                $("#homicides").text(stateCapitals[thisIndex].state + " Homicides: " + response.data[recentYear].value);
-                $("#hPerCapita").text(stateCapitals[thisIndex].abbreviation + " Homicides per 100,000: " + stateHomicides);
-                $("#national").text("US Homicides per 100,000: " + natlHomicide);
+               
+                // $("#crime-header").text("2018 Homicides");
+                // $("#homicides").text(stateCapitals[thisIndex].state + " Homicides: " + response.data[recentYear].value);
+                // $("#hPerCapita").text(stateCapitals[thisIndex].abbreviation + " Homicides per 100,000: " + stateHomicides);
+                // $("#national").text("US Homicides per 100,000: " + natlHomicide);
                 
-                if (stateHomicides < 2.5) {
+                if (stateHomicides == 0 ) {
+                    $("#rating").text("Inconclusive");
+                    $("#rating").css({"text-align": "center", "color": "white", "background-color": "black", "width": "60%"});
+                } else if (stateHomicides < 2.5) {
                     $("#rating").text("Very Safe");
                     $("#rating").css({"text-align": "center", "color": "white", "background-color": "green", "width": "60%"});
                 } else if (stateHomicides > 2.5 && stateHomicides < natlHomicide) {
@@ -173,6 +183,12 @@ $(document).ready(function () {
                     $("#rating").text("Very Dangerous");
                     $("#rating").css({"text-align": "center", "color": "white", "background-color": "red", "width": "60%"});
                 }
+            }).fail(function(error) {
+                $("#homicides").text(stateCapitals[thisIndex].state + " Homicides: N/A");
+                $("#hPerCapita").text(stateCapitals[thisIndex].abbreviation + " Homicides per 100,000: N/A");
+                $("#national").text("National Homicides per 100,000: " + natlHomicide);
+                $("#rating").text("Inconclusive");
+                    $("#rating").css({"text-align": "center", "color": "white", "background-color": "black", "width": "60%"});
             })
 
         }
