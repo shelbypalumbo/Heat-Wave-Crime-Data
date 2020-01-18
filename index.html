@@ -42,35 +42,43 @@
 
   <div class="container">
 
-  <!------States Dropdown Menu----------->
-  <div class="columns medium-7 large-3 dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-      aria-haspopup="true" aria-expanded="false">
-      <i class="fas fa-flag-usa"></i> Select a State:
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <!------States Dropdown Menu----------->
+    <div class="columns medium-7 large-3 dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-flag-usa"></i> Select a State:
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
+      <div class="crimeData">
+          <h4 id="crime-header"></h4>
+          <p id="homicides"></p>
+          <p id="hPerCapita"></p>
+          <p id="national"></p>
+          <p id="rating"></p>
+      </div>
     </div>
-    <div class="crimeData">
-        <h4 id="crime-header"></h4>
-        <p id="homicides"></p>
-        <p id="hPerCapita"></p>
-        <p id="national"></p>
-        <p id="rating"></p>
+
+
+    <!-----------Map---------------->
+    <div class="row columns small-12 medium-12 large-9">
+        <div id="map"></div>
+        <div id="geocoder" class="geocoder"></div>
     </div>
-  </div>
-
-
-  <!-----------Map---------------->
-  <div class="row columns small-12 medium-12 large-9">
-      <div id="map"></div>
-      <div id="geocoder" class="geocoder"></div>
-  </div>
 
   </div>
+  
+
+  <!-- Dont remove the <br>'s --they're essential so the footer doesn't cover the map -->
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  
   <!-----Footer-->
   <footer>
     <p>&#169; 2020 Heat Wave Co.</p>
-</footer>
+  </footer>
 
 
 

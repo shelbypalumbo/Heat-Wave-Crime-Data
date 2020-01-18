@@ -3,11 +3,26 @@ $(document).ready(function () {
     $('#page_effect').fadeIn(3000);
     //------------------------------------------------------------------------------------------
 
+    // calling the mapbox API
+    mapboxgl.accessToken = myAccessToken;
+            
+    // mapbox API call
+    var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/mapbox/dark-v10', // stylesheet location
+        center: [-98.35, 39.5], // starting position [lng, lat]
+        zoom: 3 // starting zoom
+    });
+    
+    map
+
     // initialize global variables
     var natlHomicide = 4.96;
 
     $(document).on("click", ".dropdown-item", function() {
         var thisIndex = $(this).attr("data-index");
+        
+        // calling the mapbox API
         mapboxgl.accessToken = myAccessToken;
             
             // mapbox API call
@@ -17,11 +32,7 @@ $(document).ready(function () {
                 center: [stateCapitals[thisIndex].centerLong, stateCapitals[thisIndex].centerLat], // starting position [lng, lat]
                 zoom: stateCapitals[thisIndex].zoom // starting zoom
             });
-
-            
-        
-        
-            
+        // writing FBI API call
         var fbi = function(abbreviation) {
             var queryURL = "https://api.usa.gov/crime/fbi/sapi/api/nibrs/homicide/offender/states/" + abbreviation + "/count?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv";
     
@@ -35,6 +46,7 @@ $(document).ready(function () {
                 
                 console.log(response.data[recentYear]);
                 map
+                
 
                 // Cluster Map Layer begin --------------------------------------------------------------------------------
                 
@@ -163,21 +175,6 @@ $(document).ready(function () {
                 console.log("state Homicides + 100");
                 console.log(stateHomicides + 100);
                
-                
-                //the if statement isn't working
-                // if (response.data[recentYear] = false
-                //     // stateCapitals[thisIndex].abbreviation == "NV" ||
-                //     // stateCapitals[thisIndex].abbreviation == "NJ" ||
-                //     // stateCapitals[thisIndex].abbreviation == "NY" ||
-                //     // stateCapitals[thisIndex].abbreviation == "NC" ||
-                //     // stateCapitals[thisIndex].abbreviation == "WY"
-                //     ) {
-                        
-                //         $("#homicides").text(stateCapitals[thisIndex].state + " Homicides: N/A");
-                //         $("#hPerCapita").text(stateCapitals[thisIndex].abbreviation + " Homicides per 100,000: N/A");
-                //         $("#national").text("National Homicides per 100,000: " + natlHomicide);
-                // } 
-                // else {}
                 $("#crime-header").text("2018 Homicides");
                 $("#homicides").text(stateCapitals[thisIndex].state + " Total Homicides: " + response.data[recentYear].value);
                 $("#hPerCapita").text(stateCapitals[thisIndex].abbreviation + " Homicides per 100,000: " + stateHomicides);
@@ -206,7 +203,7 @@ $(document).ready(function () {
             })
 
         }
-        // map
+        
         fbi(stateCapitals[thisIndex].abbreviation);
 
     });
@@ -225,14 +222,7 @@ $(document).ready(function () {
     
 
 
-    
-    
-// var stateAbbreviations = ["AL", "AZ", "AR", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY",]
-// for (var i = 0; i < stateAbbreviations.length; i++) {
-//     fbi(stateAbbreviations[i]);
-// }
-    
-    // end document ready ----------------------------------------------------------------------- 
+
 });
 
    
