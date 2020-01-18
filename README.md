@@ -7,9 +7,9 @@ People need be safe. Part of being safe is knowing which geographic areas are sa
 When a user lands on our webpage, a shadow-styled map of the United States loads. To the left of the map a dropdown menu allows users to select a state. Upon selection, the map zooms in on that state's geographic center while displaying a cluster bubble. The number of homicides which occurred in that state in 2018 appears in the cluster bubble. While the map loads, text content appears below the dropdown menu. The content gives information on the number of homicides in 2018, that state's homicide rate, the national rate, and a badge summarizing relative safety.
 
 ## User Story
-AS A potential homeowner...
-I WANT to know which states are dangerous and which are safe
-SO THAT I can choose a safe place to live
+- AS A potential homeowner...
+- I WANT to know which states are dangerous and which are safe
+- SO THAT I can choose a safe place to live
 
 ## API's used
 - Mapbox GL JS API
