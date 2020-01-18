@@ -1,22 +1,65 @@
-header {    background-color: #00000079;
+body {  background-image: url("connectwork.png");
+}
+
+/*styling for mapbox map start---------------------------*/
+
+#map {
+    position: static;
+    width:100%;
+    height:400px;
+    margin-bottom:30px;
+}
+
+/*styling for mapbox map end---------------------------*/
+
+/*styling for geolocator-------------------------------*/
+.geocoder {
+    position: absolute;
+    z-index: 1;
+    width: 50%;
+    left: 20%;
+    }
+    .mapboxgl-ctrl-geocoder {
+    min-width: 100%;
+    }
+/*styling for geolocator end---------------------------*/    
+
+.callout {
+            background-color: #00000079;
             color: rgb(255, 208, 0);
 }
 
-h1{ font-family: 'Special Elite', cursive;
-    text-align: center;
-    padding-top: 25px;
+
+h1, h4 {    font-family: 'Special Elite', cursive;
+            padding-top: 25px;
+            text-align: center;
 }
 
-
-.searchArea {  background-color: orange; 
-                padding: 30px 0px 0px 30px; 
-                float: left;          
+footer {    font-family: 'Special Elite', cursive;
+            background-color: #00000079;
+            color: rgb(255, 208, 0);
+            text-align: center;
+            height: 50px;
+            padding: 12px;
+            border-top: 5px solid orange;
+            bottom: 0px;
+            width: 100%;
+            display: block;  
+            position: fixed;     
 }
 
-h5 {    color: #222222; 
-        font-family: 'Special Elite', cursive; 
+li {    background-color:white;
 }
 
-.button {   border-radius: 25px;
-            background-color: #222222;
+.dropdown-menu {    overflow-y: scroll;
+                    height: 250px;
+                    background-color: orange;
+                }
+.dropdown-toggle {  font-family: 'Special Elite', cursive;
+                    background-color: orange;
+                    border: 1px orange;
+
+                }
+.crimeData {
+    color: orange;
 }
