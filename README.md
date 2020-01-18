@@ -1,5 +1,4 @@
-# ProjectTitle
-Heat Wave Crime API
+# Heat Wave Crime Map
 https://shelbypalumbo.github.io/Heat-Wave-Crime-Data/
 
 ## Project Description
@@ -47,6 +46,13 @@ SO THAT I can choose a safe place to live
     https://github.com/knightmac19
  
  ## Screenshots
+![alt_text](https://github.com/shelbypalumbo/Heat-Wave-Crime-Data/blob/HeatWaveSub/HeatWaveOnLoad.png)
+
+
+![alt_text](https://github.com/shelbypalumbo/Heat-Wave-Crime-Data/blob/HeatWaveSub/HeatWaveCT.png)
+
+
+![alt_text](https://github.com/shelbypalumbo/Heat-Wave-Crime-Data/blob/HeatWaveSub/HeatWaveKY.png)
 
 
 
